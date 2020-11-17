@@ -87,8 +87,27 @@ namespace CollectionsMetabot
             string str = string.Empty;
             try
             {
-                dictionaryOfDictionaries.Clear();
-                ReturnStatusCode = 0;
+                try
+                {
+                    dictionaryOfDictionaries.Clear();
+                    ReturnStatusCode = 0;
+                }
+                catch (Exception e)
+                {
+                    ReturnStatusCode = -1;
+                    str = $"{ErrorIntro} Message:  {e.Message}{Environment.NewLine}";
+                }
+                try
+                {
+                    DictionaryExpansion.nDictionary.Clear();
+                    ReturnStatusCode = 0;
+                }
+                catch (Exception e)
+                {
+                    ReturnStatusCode = -1;
+                    str = $"{ErrorIntro} Message:  {e.Message}{Environment.NewLine}";
+                }
+                
             }
             catch (Exception e)
             {
@@ -103,8 +122,28 @@ namespace CollectionsMetabot
             string str = string.Empty;
             try
             {
-                dictionaryOfDictionaries[sessionName].Clear();
-                ReturnStatusCode = 0;
+                try
+                {
+                    dictionaryOfDictionaries[sessionName].Clear();
+                    ReturnStatusCode = 0;
+                }
+                catch (Exception e)
+                {
+                    ReturnStatusCode = -1;
+                    str = $"{ErrorIntro} Message:  {e.Message}{Environment.NewLine}";
+                }
+
+                try
+                {
+                    DictionaryExpansion.nDictionary[sessionName].Clear();
+                    ReturnStatusCode = 0;
+                }
+                catch (Exception e)
+                {
+                    ReturnStatusCode = -1;
+                    str = $"{ErrorIntro} Message:  {e.Message}{Environment.NewLine}";
+                }
+                
             }
             catch (Exception e)
             {

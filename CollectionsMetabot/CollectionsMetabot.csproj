@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionsProperties.cs" />
+    <Compile Include="DictionaryExpansion.cs" />
     <Compile Include="DictionaryHelper.cs" />
     <Compile Include="ErrorProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

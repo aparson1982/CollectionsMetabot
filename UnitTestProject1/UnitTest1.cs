@@ -22,7 +22,18 @@ namespace UnitTestProject1
 
             Console.WriteLine(DictionaryHelper.DictionaryGetKey($@"3", "Eric"));
 
+        }
 
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Console.WriteLine(DictionaryExpansion.DicExUpdateValue($@"PathFile\of\SomeExcelFile.xlsx", "Sheet1", "A", 1, "Adam"));
+
+            Console.WriteLine(DictionaryExpansion.DicExUpdateValue($@"PathFile\of\SomeExcelFile.xlsx", "Sheet1", "B", 1, "Beavis"));
+
+            Console.WriteLine(DictionaryExpansion.DicExGetValue($@"PathFile\of\SomeExcelFile.xlsx","Sheet1","A",1));
+
+            
 
         }
     }
