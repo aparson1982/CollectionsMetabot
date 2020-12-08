@@ -10,17 +10,25 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine(DictionaryHelper.DictionaryUpdateValue($@"PathFile\of\SomeExcelFile.xlsx", "2", "Adam"));
 
-            Console.WriteLine(DictionaryHelper.DictionaryGetValue($@"PathFile\of\SomeExcelFile.xlsx", "Adam"));
+            DictionaryHelper.DictionaryUpdateValue("Adam", "1", "S2.xlsx");
+            DictionaryHelper.DictionaryUpdateValue("Tommie", "2", "S3.xlsx");
+            DictionaryHelper.DictionaryUpdateValue("Chris", "0", "S1.xlsx");
+            DictionaryHelper.DictionaryUpdateValue("Chris", "2", "S3.xlsx");
+            DictionaryHelper.DictionaryUpdateValue("Tommie", "1", "S2.xlsx");
+            
+            
+            string str1 = string.Empty;
+            for (int i = 1; i < 3; i++)
+            {
+                for (int j = 1; j < 3; j++)
+                {
+                    str1 += DictionaryHelper.DictionaryGetKey($"{i}", $"S{j}.xlsx") + " ";
+                }
+            }
+            
 
-            Console.WriteLine(DictionaryHelper.DictionaryUpdateValue($@"PathFile\of\SomeExcelFile.xlsx", "3", "Eric"));
-
-            Console.WriteLine(DictionaryHelper.DictionaryGetValue($@"PathFile\of\SomeExcelFile.xlsx", "Eric"));
-
-            Console.WriteLine(DictionaryHelper.DictionaryUpdateValue($@"PathFile\of\SomeExcelFiles.xlsx", "3", "Adam"));
-
-            Console.WriteLine(DictionaryHelper.DictionaryGetKey($@"3", "Eric"));
+            Console.WriteLine(str1);
 
         }
 

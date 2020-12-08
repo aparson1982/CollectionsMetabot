@@ -54,7 +54,6 @@ namespace CollectionsMetabot
             try
             {
                 str = dictionaryOfDictionaries[sessionName][key];
-                //str = dictionary[key];
             }
             catch (Exception e)
             {
@@ -70,7 +69,7 @@ namespace CollectionsMetabot
             try
             {
                 IEnumerable<string> keys = dictionaryOfDictionaries[sessionName].Where(pair => pair.Value == value).Select(pair => pair.Key);
-                //IEnumerable<string> keys = dictionary.Where(pair => pair.Value == value).Select(pair => pair.Key);
+                
                 str = string.Join(", ", keys.ToArray());
                 ReturnStatusCode = 0;
             }
