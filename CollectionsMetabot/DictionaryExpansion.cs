@@ -69,6 +69,22 @@ namespace CollectionsMetabot
             return str;
         }
 
+        public static string DicExGetDictionaryLength()
+        {
+            string str = string.Empty;
+            try
+            {
+                str = nDictionary.Count.ToString();
+                ReturnStatusCode = 0;
+            }
+            catch (Exception e)
+            {
+                ReturnStatusCode = -1;
+                str = $"{ErrorIntro} Message:  {e.Message}{Environment.NewLine}";
+            }
+            return str;
+        }
+
         public static string DicExGetSessionLength(string SessionName)
         {
             string str = string.Empty;
