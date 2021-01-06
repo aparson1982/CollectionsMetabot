@@ -28,8 +28,6 @@ namespace CollectionsMetabot
                     collectionDictionary[sessionName] = a;
                     a[insertCounter] = new Item(value).Name;
                     i = a.CreateIterator();
-                    //collectionDictionary[sessionName] = a;
-                    //collectionDictionary.Add(sessionName, a);
                     str = $"Session [{sessionName}] | Updated session/value: " + a[insertCounter];
                 }
                 else
