@@ -34,15 +34,10 @@ namespace CollectionsMetabot
                 {
                     a = collectionDictionary[sessionName];
                     int tempCount = a.Count;
-                    //tempCount = tempCount;
-                    //dictionary[key] = value;
-
+                    
                     a[tempCount] = new Item(value).Name;
 
                     i = a.CreateIterator();
-
-                    //collectionDictionary.Add(sessionName, a);
-                    //collectionDictionary[sessionName] = a;
 
                     str = $"Session [{sessionName}] | Updated session/value: " + a[tempCount];
                     ReturnStatusCode = 0;
@@ -112,31 +107,17 @@ namespace CollectionsMetabot
             try
             {
 
-                //if (numberOfInvokes < 1)
-                //{
-                //    item = i.First();
-                //}
-                //if (item == null)
-                //{
-                //    return null;
-                //}
-                //str = item.Name.ToString();
-                //item = i.Next();
-                //numberOfInvokes += 1;
-                //ReturnStatusCode = 0;
-
-
                 GetInvokeCounter(sessionName);
                 numberOfInvokes = sessionInvokeCounter[sessionName];
                 Collection a = collectionDictionary[sessionName];
-                object s;
+                //object s;
                 
-                if (numberOfInvokes < 1)
-                {
-                    a.item = i.First();
-                    s = a[numberOfInvokes];
-                    str = s.ToString();
-                }
+                //if (numberOfInvokes < 1)
+                //{
+                //    a.item = i.First();
+                //    s = a[numberOfInvokes];
+                //    str = s.ToString();
+                //}
                 if (numberOfInvokes >= a.Count)
                 {
                     return null;
@@ -154,5 +135,66 @@ namespace CollectionsMetabot
 
             return str;
         }
+
+
+        public static string GetElementAt(string sessionName, int index)
+        {
+            string str = string.Empty;
+            try
+            {
+                Collection a = collectionDictionary[sessionName];
+                str = a[index].ToString();
+                ReturnStatusCode = 0;
+            }
+            catch (Exception e)
+            {
+                ReturnStatusCode = -1;
+                str = $"{ErrorIntro}" +
+                    $"Message:  {e.Message} + {Environment.NewLine}" +
+                    $"StackTrace:  {e.StackTrace} + {Environment.NewLine}";
+            }
+            return str;
+        }
+
+
+        public static string GetCount(string sessionName)
+        {
+            string str = string.Empty;
+            try
+            {
+                Collection a = collectionDictionary[sessionName];
+                str = a.Count.ToString();
+                ReturnStatusCode = 0;
+            }
+            catch (Exception e)
+            {
+                ReturnStatusCode = -1;
+                str = $"{ErrorIntro}" +
+                      $"Message:  {e.Message} + {Environment.NewLine}" +
+                      $"StackTrace:  {e.StackTrace} + {Environment.NewLine}";
+            }
+            return str;
+        }
+
+        public static string ClearCollection(string sessionName)
+        {
+            string str = string.Empty;
+            try
+            {
+                Collection a = collectionDictionary[sessionName];
+                a.Demolish();
+                numberOfInvokes = 0;
+                insertCounter = 0;
+                str = true.ToString();
+                ReturnStatusCode = 0;
+            }
+            catch (Exception)
+            {
+                ReturnStatusCode = -1;
+                str = false.ToString();
+            }
+            return str;
+        }
+
     }
 }

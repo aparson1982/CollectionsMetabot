@@ -83,12 +83,12 @@ namespace CollectionsMetabot
             return str;
         }
 
-        public static string GetElementAt(int i)
+        public static string GetElementAt(int index)
         {
             string str = string.Empty;
             try
             {
-                Item ob = (Item)a[i];
+                Item ob = (Item)a[index];
                 str = ob.Name;
                 ReturnStatusCode = 0;
             }
@@ -99,17 +99,6 @@ namespace CollectionsMetabot
                       $"Message:  {e.Message} + {Environment.NewLine}" +
                       $"StackTrace:  {e.StackTrace} + {Environment.NewLine}";
             }
-            return str;
-        }
-
-        public static string GetElementAt_(int i)
-        {
-            string str = string.Empty;
-            
-            Item ob = (Item)a[i];
-            str = ob.Name;
-            ReturnStatusCode = 0;
-            
             return str;
         }
 

@@ -141,6 +141,12 @@ namespace UnitTestProject1
             Console.WriteLine(CollectionDictionary.GetElement("Session1"));
 
 
+            Console.WriteLine(CollectionDictionary.GetCount("Session1"));
+            Console.WriteLine(CollectionDictionary.GetCount("Session2"));
+
+            Console.WriteLine(CollectionDictionary.GetElementAt("Session1", 1));
+            Console.WriteLine(CollectionDictionary.ClearCollection("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElementAt("Session1",1));
 
 
         }
