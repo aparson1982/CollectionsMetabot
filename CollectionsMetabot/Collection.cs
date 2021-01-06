@@ -16,10 +16,7 @@ namespace CollectionsMetabot
             return new Iterator(this);
         }
 
-        internal int Count
-        {
-            get { return items.Count; }
-        }
+        internal int Count => items.Count;
 
         internal void Demolish()
         {
@@ -30,8 +27,8 @@ namespace CollectionsMetabot
 
         internal object this[int index]
         {
-            get { return items[index]; }
-            set { items.Add(value); }
+            get => items[index];
+            set => items.Add(value);
         }
 
         public static implicit operator Collection(Dictionary<string, string> v)

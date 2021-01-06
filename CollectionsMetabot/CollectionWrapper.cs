@@ -41,10 +41,7 @@ namespace CollectionsMetabot
             try
             {
                 List<string> l = input.Split(delimiter).ToList();
-                for (int i = 0; i < l.Count; i++)
-                {
-                    str += Insert(l[i].Trim()) + Environment.NewLine;
-                }
+                str = l.Aggregate(str, (current, t) => current + (Insert(t.Trim()) + Environment.NewLine));
             }
             catch (Exception e)
             {

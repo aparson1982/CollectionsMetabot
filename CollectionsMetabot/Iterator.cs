@@ -34,15 +34,8 @@ namespace CollectionsMetabot
             return (Item)ret;
         }
 
-        public bool IsDone
-        {
-            get { return current >= collection.Count - 1; }
-        }
+        public bool IsDone => current >= collection.Count - 1;
 
-        public Item CurrentItem
-        {
-            get { return collection[current] as Item; }
-        }
-
+        public Item CurrentItem => collection[current] as Item;
     }
 }

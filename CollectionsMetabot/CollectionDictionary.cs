@@ -111,6 +111,21 @@ namespace CollectionsMetabot
             string str = string.Empty;
             try
             {
+
+                //if (numberOfInvokes < 1)
+                //{
+                //    item = i.First();
+                //}
+                //if (item == null)
+                //{
+                //    return null;
+                //}
+                //str = item.Name.ToString();
+                //item = i.Next();
+                //numberOfInvokes += 1;
+                //ReturnStatusCode = 0;
+
+
                 GetInvokeCounter(sessionName);
                 numberOfInvokes = sessionInvokeCounter[sessionName];
                 Collection a = collectionDictionary[sessionName];
@@ -120,6 +135,7 @@ namespace CollectionsMetabot
                 {
                     a.item = i.First();
                     s = a[numberOfInvokes];
+                    str = s.ToString();
                 }
                 if (numberOfInvokes >= a.Count)
                 {
