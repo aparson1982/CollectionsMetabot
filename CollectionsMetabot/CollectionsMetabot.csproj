@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection.cs" />
+    <Compile Include="CollectionDictionary.cs" />
     <Compile Include="CollectionsProperties.cs" />
+    <Compile Include="CollectionWrapper.cs" />
     <Compile Include="DictionaryExpansion.cs" />
     <Compile Include="DictionaryHelper.cs" />
     <Compile Include="ErrorProperties.cs" />
+    <Compile Include="IAbstractCollection.cs" />
+    <Compile Include="IAbstractIterator.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Iterator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

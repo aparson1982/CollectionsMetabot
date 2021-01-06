@@ -10,5 +10,6 @@ namespace CollectionsMetabot
     {
         public static string ReturnStatusDescription { get; set; }
         public static int ReturnStatusCode { get; set; }
+
     }
 }

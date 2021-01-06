@@ -10,26 +10,27 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
+            Console.WriteLine(CollectionWrapper.Insert("Row 0"));
+            Console.WriteLine(CollectionWrapper.Insert("Row 2"));
+            Console.WriteLine(CollectionWrapper.Insert("Row 4"));
+            Console.WriteLine(CollectionWrapper.Insert("Row 5"));
+            Console.WriteLine(CollectionWrapper.Insert("Row 6"));
+            Console.WriteLine("***");
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine(CollectionWrapper.GetElement());
+            Console.WriteLine("***");
+            Console.WriteLine(CollectionWrapper.GetElementAt(1));
+            Console.WriteLine(CollectionWrapper.GetElementAt(0));
 
-            DictionaryHelper.DictionaryUpdateValue("Adam", "1", "S2.xlsx");
-            DictionaryHelper.DictionaryUpdateValue("Tommie", "2", "S3.xlsx");
-            DictionaryHelper.DictionaryUpdateValue("Chris", "0", "S1.xlsx");
-            DictionaryHelper.DictionaryUpdateValue("Chris", "2", "S3.xlsx");
-            DictionaryHelper.DictionaryUpdateValue("Tommie", "1", "S2.xlsx");
-            
-            
-            string str1 = string.Empty;
-            for (int i = 1; i < 3; i++)
-            {
-                for (int j = 1; j < 3; j++)
-                {
-                    str1 += DictionaryHelper.DictionaryGetKey($"{i}", $"S{j}.xlsx") + " ";
-                }
-            }
-            
+            Console.WriteLine(CollectionWrapper.GetCount());
 
-            Console.WriteLine(str1);
-
+            Console.WriteLine(CollectionWrapper.ClearCollection());
+            Console.WriteLine(CollectionWrapper.ClearCollection());
         }
 
         [TestMethod]
@@ -95,6 +96,52 @@ namespace UnitTestProject1
             Console.WriteLine(DictionaryExpansion.DicExGetSessionLength($@"AcctTerrRows"));
             Console.WriteLine(DictionaryExpansion.DicExGetSubSessionLength($@"AcctTerrRows", "Sub1"));
             Console.WriteLine(DictionaryExpansion.DicExGetColLength($@"AcctTerrRows", "Sub1","Acct"));
+
+        }
+
+        [TestMethod]
+        public void TestCollectionDictionary()
+        {
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row001"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row002"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row003"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row004"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row005"));
+
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session2", "Row010"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session2", "Row011"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session2", "Row012"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session2", "Row013"));
+
+
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row006"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session1", "Row007"));
+            Console.WriteLine(CollectionDictionary.CollectionDictionaryInsert("Session2", "Row014"));
+
+
+
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session2"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+            Console.WriteLine(CollectionDictionary.GetElement("Session1"));
+
+
+
 
         }
     }
